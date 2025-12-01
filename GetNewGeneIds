@@ -1,0 +1,15 @@
+#R code to get gene symbols, entrez ids or ensembl ids for genes
+
+#Here: 
+#gene = a list of gene names you want other names for
+#fromType = the format of your gene names currently
+#toType = the format of gene names you want
+
+#output = a dataframe
+
+
+gene.df <- bitr(gene, fromType = "ENTREZID",
+        toType = c("ENSEMBL", "SYMBOL"),
+        OrgDb = org.Hs.eg.db)
+
+#courtesy of https://yulab-smu.top/biomedical-knowledge-mining-book/021-go.html
